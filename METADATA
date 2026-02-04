@@ -15,7 +15,7 @@ third_party {
   identifier {
     type: "Git"
     value: "https://gitlab.freedesktop.org/emersion/libdisplay-info.git"
-    version: "ce5aea31dfd54bc28d2673337a97e0698164cfea"
+    version: "66b802d05b374cd8f388dc6ad1e7ae4f08cb3300"
     closest_version: "0.2.0"
     primary_source: true
   }
