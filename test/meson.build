@@ -75,7 +75,22 @@ foreach tc : test_cases
 	gen_targets += files('data/' + tc + '.edid')
 endforeach
 
-subproject('v4l-utils', required: false)
+subproject(
+	'v4l-utils',
+	required: false,
+	default_options: [
+		'bpf=disabled',
+		'gconv=disabled',
+		'jpeg=disabled',
+		'libdvbv5=disabled',
+		'qv4l2=disabled',
+		'qvidcap=disabled',
+		'v4l2-tracer=disabled',
+		'v4l-plugins=false',
+		'v4l-wrappers=false',
+		'doxygen-doc=disabled',
+	],
+)
 ref_edid_decode = find_program('edid-decode', native: true, required: false)
 if ref_edid_decode.found()
 	test_env += 'REF_EDID_DECODE=' + ref_edid_decode.full_path()
