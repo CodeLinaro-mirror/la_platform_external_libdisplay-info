@@ -329,7 +329,7 @@ encode_min_luminance(float min, float max)
 {
 	if (min == 0)
 		return 0;
-	return (uint8_t) (255 * sqrtf(min / max * 100));
+	return (uint8_t) roundf(255 * sqrtf(min / max * 100));
 }
 
 static void
